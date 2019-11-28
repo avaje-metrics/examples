@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.example</groupId>
+  <artifactId>javalin-example</artifactId>
+  <version>1.1-SNAPSHOT</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <docker.appname>${project.artifactId}</docker.appname>
+    <docker.appversion>${project.version}</docker.appversion>
+    <main.class>org.example.web.Application</main.class>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.avaje.composite</groupId>
+      <artifactId>logback</artifactId>
+      <version>1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.avaje.metrics</groupId>
+      <artifactId>metrics</artifactId>
+      <version>8.2-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.dinject</groupId>
+      <artifactId>dinject</artifactId>
+      <version>1.12</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.dinject</groupId>
+      <artifactId>dinject-controller</artifactId>
+      <version>1.12</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.javalin</groupId>
+      <artifactId>javalin</artifactId>
+      <version>3.6.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.module</groupId>
+      <artifactId>jackson-module-kotlin</artifactId>
+      <version>2.10.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.datatype</groupId>
+      <artifactId>jackson-datatype-jsr310</artifactId>
+      <version>2.10.1</version>
+    </dependency>
+
+
+
+    <!-- Annotation processors -->
+
+    <dependency>
+      <groupId>io.dinject</groupId>
+      <artifactId>dinject-generator</artifactId>
+      <version>1.12</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.dinject</groupId>
+      <artifactId>javalin-generator</artifactId>
+      <version>1.12</version>
+      <scope>provided</scope>
+    </dependency>
+
+
+    <!-- Test dependencies -->
+
+    <dependency>
+      <groupId>org.avaje.composite</groupId>
+      <artifactId>junit</artifactId>
+      <version>1.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Pull in as a traditional dependency -->
+    <dependency>
+      <groupId>com.konghq</groupId>
+      <artifactId>unirest-java</artifactId>
+      <version>3.1.02</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>app</finalName>
+    <plugins>
+
+      <plugin>
+        <groupId>io.repaint.maven</groupId>
+        <artifactId>tiles-maven-plugin</artifactId>
+        <version>2.15</version>
+        <extensions>true</extensions>
+        <configuration>
+          <tiles>
+            <tile>org.avaje.tile:java-compile:11</tile>
+            <tile>org.avaje.tile:lib-classpath:1.1</tile>
+            <tile>io.avaje.tile:metrics-enhance:8.2-SNAPSHOT</tile>
+          </tiles>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>
