@@ -26,7 +26,7 @@
     <dependency>
       <groupId>io.avaje.metrics</groupId>
       <artifactId>metrics</artifactId>
-      <version>8.2-SNAPSHOT</version>
+      <version>8.2</version>
     </dependency>
 
     <dependency>
@@ -110,7 +110,7 @@
           <tiles>
             <tile>org.avaje.tile:java-compile:11</tile>
             <tile>org.avaje.tile:lib-classpath:1.1</tile>
-            <tile>io.avaje.tile:metrics-enhance:8.2-SNAPSHOT</tile>
+            <tile>io.avaje.tile:metrics-enhance:8.2</tile>
           </tiles>
         </configuration>
       </plugin>

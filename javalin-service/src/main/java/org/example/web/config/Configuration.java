@@ -19,7 +19,7 @@ class Configuration {
 
     MetricReportConfig config = new MetricReportConfig();
     config.setDirectory("/tmp/metrics");
-    config.setMetricsFileName("metrics-ex1");
+    //config.setMetricsFileName("metrics-ex1");
 
     // report aggregate statistics every 10 seconds to local csv file
     config.setFreqInSeconds(10);
