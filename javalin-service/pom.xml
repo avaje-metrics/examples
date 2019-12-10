@@ -13,6 +13,8 @@
     <docker.appname>${project.artifactId}</docker.appname>
     <docker.appversion>${project.version}</docker.appversion>
     <main.class>org.example.web.Application</main.class>
+    <metrics.version>8.3</metrics.version>
+    <dinject.version>1.15</dinject.version>
   </properties>
 
   <dependencies>
@@ -26,19 +28,19 @@
     <dependency>
       <groupId>io.avaje.metrics</groupId>
       <artifactId>metrics</artifactId>
-      <version>8.2</version>
+      <version>${metrics.version}</version>
     </dependency>
 
     <dependency>
       <groupId>io.dinject</groupId>
       <artifactId>dinject</artifactId>
-      <version>1.12</version>
+      <version>${dinject.version}</version>
     </dependency>
 
     <dependency>
       <groupId>io.dinject</groupId>
       <artifactId>dinject-controller</artifactId>
-      <version>1.12</version>
+      <version>${dinject.version}</version>
     </dependency>
 
     <dependency>
@@ -66,14 +68,14 @@
     <dependency>
       <groupId>io.dinject</groupId>
       <artifactId>dinject-generator</artifactId>
-      <version>1.12</version>
+      <version>${dinject.version}</version>
       <scope>provided</scope>
     </dependency>
 
     <dependency>
       <groupId>io.dinject</groupId>
       <artifactId>javalin-generator</artifactId>
-      <version>1.12</version>
+      <version>${dinject.version}</version>
       <scope>provided</scope>
     </dependency>
 
@@ -104,13 +106,13 @@
       <plugin>
         <groupId>io.repaint.maven</groupId>
         <artifactId>tiles-maven-plugin</artifactId>
-        <version>2.15</version>
+        <version>2.16</version>
         <extensions>true</extensions>
         <configuration>
           <tiles>
             <tile>org.avaje.tile:java-compile:11</tile>
             <tile>org.avaje.tile:lib-classpath:1.1</tile>
-            <tile>io.avaje.tile:metrics-enhance:8.2</tile>
+            <tile>io.avaje.tile:metrics-enhance:${metrics.version}</tile>
           </tiles>
         </configuration>
       </plugin>

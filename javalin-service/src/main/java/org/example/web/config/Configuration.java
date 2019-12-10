@@ -13,7 +13,7 @@ class Configuration {
   MetricReportManager metrics() {
 
     MetricManager.jvmMetrics()
-      .registerStandardJvmMetrics()
+      .registerJvmMetrics()
       .registerCGroupMetrics()
       .registerLogbackMetrics();
 

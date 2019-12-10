@@ -17,9 +17,9 @@ public class IntegrationTest {
   @Test
   public void GET_home() {
 
-    Javalin app = Application.start(9091);
+    Javalin app = Application.start(9891);
     try {
-      final HttpResponse<String> res0 = Unirest.get("http://localhost:9091")
+      final HttpResponse<String> res0 = Unirest.get("http://localhost:9891")
         .header("Content-Type", "application/json")
         .asString();
 
@@ -27,7 +27,7 @@ public class IntegrationTest {
       assertThat(res0.getBody()).isEqualTo("ok");
 
 
-      final HttpResponse<ListResponse<Foo>> res1 = Unirest.get("http://localhost:9091/api/foo")
+      final HttpResponse<ListResponse<Foo>> res1 = Unirest.get("http://localhost:9891/api/foo")
         .header("Content-Type", "application/json")
         .asObject(new GenericType<ListResponse<Foo>>() {
         });
